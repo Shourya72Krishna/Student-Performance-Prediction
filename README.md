@@ -1,118 +1,131 @@
 # 🎓 Student Performance Prediction
 
-This project aims to predict whether a student will **pass or fail** based on key factors such as attendance, previous scores, and study habits using **machine learning** techniques.
+This project predicts whether a student will **Pass** or **Fail** based on their study habits, attendance, parental support, and other features using a machine learning model.
 
 ---
 
 ## 📌 Problem Statement
 
-> **Objective:** Build a classification model to determine if a student will pass or fail using input features like:
-- Attendance
-- Study Time per Week
-- Number of Absences
-- Tutoring
-- Parental Support
-- Extracurricular Activities
-- Sports, Music, and Volunteering Participation
+> **Predict if a student will pass or fail based on attendance, previous scores, and study habits.**
 
 ---
 
-## 🧠 Methodology
-
-### 1. **Data Collection**
-- Dataset containing ~2300 students loaded from a CSV file.
-- Each row represents a student with their academic behavior and performance.
-
-### 2. **Data Cleaning**
-- Checked for null/missing values.
-- Ensured column names are correct.
-- Removed inconsistencies.
-
-### 3. **Feature Engineering**
-- Selected important features that impact academic results.
-- Created a binary `Pass/Fail` label from the `GradeClass` column.
-
-### 4. **Preprocessing**
-- Encoded labels (`Pass` = 1, `Fail` = 0).
-- Scaled features using `StandardScaler`.
-- Split dataset into **80% training** and **20% testing** sets.
-
-### 5. **Model Training**
-- Used `Random Forest Classifier` for its robustness and accuracy.
-- Trained on scaled data and evaluated using classification metrics.
-
-### 6. **Evaluation Metrics**
-- **Accuracy Score**
-- **Classification Report** (Precision, Recall, F1-score)
-- **Confusion Matrix**
-
-### 7. **Visualization**
-- Accuracy score bar chart.
-- Confusion matrix heatmap.
-- Feature importance bar chart.
-
-### 8. **Result Presentation**
-- Displayed prediction results for the **first 20 students**.
-- Exported all predictions to a CSV file.
-
----
-
-## 🗃 Dataset
-
-**Filename:** `Student Performance Prediction.csv`
-
-**Columns Used:**
-- `StudyTimeWeekly`
-- `Absences`
-- `Tutoring`
-- `ParentalSupport`
-- `Extracurricular`
-- `Sports`
-- `Music`
-- `Volunteering`
-- `GradeClass` ➜ used to derive `Pass/Fail`
-
----
-
-## 📈 Results
-
-| Metric            | Value (Example) |
-|-------------------|-----------------|
-| Accuracy          | 0.89            |
-| Precision (Pass)  | 0.91            |
-| Recall (Pass)     | 0.94            |
-| F1-score (Pass)   | 0.92            |
-
-✅ Confusion Matrix and feature importance graphs included.
-
-📄 CSV output generated: `student_predictions.csv`
-
----
-
-## 📊 Sample Output (First 20 Students)
-
-| Student_ID | Predicted | Predicted_Label |
-|------------|-----------|-----------------|
-| 101        | 1         | Pass            |
-| 102        | 0         | Fail            |
-| ...        | ...       | ...             |
-
----
-
-## 🛠️ Tools & Libraries Used
+## 🧠 Technologies Used
 
 - Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
 - Google Colab
+- Pandas, NumPy
+- Scikit-learn (ML)
+- Seaborn, Matplotlib (Visualization)
 
 ---
 
-## 🚀 How to Run
+## 📂 Dataset Information
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/student-performance-prediction.git
+- **Source**: Uploaded via Google Drive  
+- **Size**: ~2300 students  
+- **Features**:
+  - `StudentID`
+  - `Age`
+  - `Gender`
+  - `Ethnicity`
+  - `ParentalEducation`
+  - `StudyTimeWeekly`
+  - `Absences`
+  - `Tutoring`
+  - `ParentalSupport`
+  - `Extracurricular`
+  - `Sports`
+  - `Music`
+  - `Volunteering`
+  - `GPA`
+  - `GradeClass` → Transformed to `Pass/Fail`
+
+---
+
+## ⚙️ Methodology
+
+1. **Load** and explore dataset.
+2. **Create target** variable (`Pass/Fail`) from `GradeClass`.
+3. **Select features** (study habits, absences, etc.).
+4. **Preprocess**: Encoding, Scaling.
+5. **Split** data into training and testing sets.
+6. **Train** a Random Forest Classifier.
+7. **Evaluate** model with accuracy score, confusion matrix, classification report.
+8. **Visualize** feature importance, confusion matrix, accuracy.
+9. **Predict and display** results of first 20 students.
+
+---
+
+## 🎯 Algorithm Used
+
+> **Random Forest Classifier**
+
+- Ensemble model of decision trees.
+- Avoids overfitting.
+- Provides feature importance.
+- Great for classification problems.
+
+---
+
+## 📈 Evaluation Metrics
+
+- **Accuracy**
+- **Precision / Recall / F1-score**
+- **Confusion Matrix**
+
+---
+
+## 📊 First 20 Students - Predicted Results
+
+| Student ID | Predicted Label |
+|------------|------------------|
+| 1001       | Pass             |
+| 1002       | Fail             |
+| 1003       | Pass             |
+| 1004       | Pass             |
+| 1005       | Pass             |
+| 1006       | Fail             |
+| 1007       | Pass             |
+| 1008       | Pass             |
+| 1009       | Pass             |
+| 1010       | Pass             |
+| 1011       | Pass             |
+| 1012       | Fail             |
+| 1013       | Pass             |
+| 1014       | Pass             |
+| 1015       | Fail             |
+| 1016       | Fail             |
+| 1017       | Pass             |
+| 1018       | Pass             |
+| 1019       | Pass             |
+| 1020       | Fail             |
+
+> 📎 *These predictions were made using a trained Random Forest model. "Pass" means the student was predicted to pass based on their features.*
+
+---
+
+## 📊 Visualization Samples
+
+- **Confusion Matrix**
+- **Model Accuracy**
+- **Feature Importance**
+
+---
+
+## 📥 Output File
+
+- `student_predictions.csv` → Contains predictions for all students.
+
+---
+
+## ✅ Conclusion
+
+This project successfully demonstrates how machine learning can predict student outcomes based on behavioral and academic data. It can help educational institutions identify students who might need support early on.
+
+---
+
+## 🙋‍♂️ Author
+
+Made by a B.Tech first-year student as part of an academic project.
+
